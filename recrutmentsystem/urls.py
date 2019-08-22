@@ -26,4 +26,5 @@ urlpatterns = [
      path('selectedlist/', views.selectedlist),
       path('rejectedlist/', views.rejectedlist),
      path('openfile/<str:path>', views.viewfiles),
+     path('login/admin/', views.loginadmin),
     ]
