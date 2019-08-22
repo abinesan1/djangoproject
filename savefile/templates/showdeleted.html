@@ -1,0 +1,64 @@
+`<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>  
+     {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+	<style>
+	.btn_col{
+	display:flex;
+	justify-content:space-around;}
+	.btn_col a{
+	border:1px solid #ccc;
+	color:#000;
+	text-decoration:none;
+cursor:pointer;
+padding:5px;
+display:inline-block;
+width:45%;
+text-align:center;
+font-size:13px;
+margin:0 5px;
+	}
+	.btn_col a:hover{
+	background:#ddd;
+	}
+		.btn_col a span{
+padding:5px 10px;
+		}		
+	</style>
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm" style="width:100%;text-align:center">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>ID</th>  
+        <th>FirstName</th>  
+        <th>LastName</th>
+        <th>MobileNumber</th>		
+        <th>Email</th> 
+		 <th>View Files</th>  
+      
+    </thead>  
+    <tbody>  
+{% for employee in detail %}  
+    <tr>  
+        <td>{{ employee.id }}</td>  
+        <td>{{ employee.firstname }}</td>  
+        <td>{{ employee.lastname }}</td>
+        <td>{{ employee.mobilenum }}</td>  		
+        <td>{{ employee.email }}</td>  
+        <td class="btn_col">  
+            <a href="/openfile/{{ employee.fileurl }}"><span class="glyphicon glyphicon-pencil" >VIEW APPLICATION</span></a><br> 
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center> <div style="width:300px;"><div class="btn_col"><a href="/selectedlist/" class="btn btn-primary">SELECTED LIST</a> <a href="/showdetails" class="btn btn-primary">FULL LIST</a></div></div></center>  
+
+</body>  
+</html>  

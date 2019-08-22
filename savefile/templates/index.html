@@ -1,0 +1,45 @@
+<head>
+<style>
+.form1 {
+width:300px;
+margin:auto;
+
+}
+.form1 p label{
+display: block;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+    font-weight: 600;}
+.form1 p input[type="text"],.form1 p input[type="email"]{
+height:35px;
+border:1px solid #ccc;
+border-radius:10px;
+width:100%;
+}
+.form_btn{
+width:150px;
+margin:auto;
+}
+
+.form_btn button{
+    width: 100%;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    margin-top: 15px;
+}
+</style>
+</head>
+<body>  
+<form method="POST" class="post-form" enctype="multipart/form-data">
+
+        {% csrf_token %}  
+		<div class="form1">
+        {{ form.as_p }}  
+		</div>
+		<div class="form_btn">
+        <button type="submit" class="save btn btn-default">Save</button></div>
+</form>  
+</body>
