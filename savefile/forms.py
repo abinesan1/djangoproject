@@ -6,3 +6,9 @@ class StudentForm(forms.Form):
     email     = forms.EmailField(label="Enter Email")  
     file      = forms.FileField() # for creating file input
     print(firstname,lastname,email)
+   
+
+class AdminLogin(forms.Form):  
+    username     = forms.CharField(label="Enter user name")
+    password  = forms.CharField(label="Password", max_length = 20) 
+    print(password,username)
